@@ -1,5 +1,3 @@
-package TrabajosPracticos.tp2.trabajoGrupal;
-
 /*una simulacion espacial registra naves con nombre, velocidad máxima(en km/h), combustible restante (en litros) y destino.
 Los jugadores quieren verificar si una nave puede llegar a su destino (combustible >1000), acelerar
 (aumentar velocidad) y mostrar un informe de la misión.
@@ -12,15 +10,15 @@ public class Nave {
     private int velocidadM;
     private int rendimiento;
 
-    //constructor
-    public Nave(String nombre, int velocidadM, int rendimiento,  double combustible){
+    //Constructor
+    public Nave(String nombre, int velocidadM, int rendimiento, double combustible){
         this.nombre= nombre;
         this.combustible= combustible;
         this.velocidadM= velocidadM;
-        this.rendimiento= rendimiento ;
+        this.rendimiento= rendimiento;
     }
 
-    //metodo get 
+    //método get
 
     public String getnombre(){
         return this.nombre;
@@ -32,8 +30,7 @@ public class Nave {
         return this.velocidadM;
     }
 
-
-    //metodo set
+    //método set
 
     public void setNombre(String name){
         this.nombre= name;
@@ -44,18 +41,18 @@ public class Nave {
     public void setVelocidadM(int velocidad){
         this.velocidadM= velocidad;
     }
-  
 
-    //otros metodos
+
+    //otros métodos
     public double calculoCombustible(double km){
         return this.combustible - (km / this.rendimiento);
-    } //cuanto gasta de combustible por x kilometro
+    }  //cuánto combustible gasta por cada kilómetro recorrido
 
     public boolean esMayor(double km){
         return this.combustible > this.calculoCombustible(km);
-    } //pregunta si llega a destino con el combustible que le queda
+    }  //pregunta si llega al destino con el combustible disponible
 
     public String toString(){
-    return "Nave [Nombre="+ this.nombre+", velocidad:"+ this.velocidadM + "Km/h , combustible:" + this.combustible + " L, rendimiento:" + this.rendimiento + " Km/L ]";
-}
+        return "Nave [Nombre="+ this.nombre+ ", velocidad:" + this.velocidadM + "Km/h , Combustible:" + this.combustible + " L, Rendimiento:" + this.rendimiento + "Km/L ]";
+    }
 }
